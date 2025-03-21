@@ -8,7 +8,6 @@ public class Sudoku {
     }
 
     boolean isNotInCol(int board[][], int colonne, int number) {
-        System.out.println("colonne" + colonne);
         for (int i = 0; i < 9; i++) {
             if (board[i][colonne] == number)
                 return false;
