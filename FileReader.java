@@ -3,12 +3,12 @@ import java.util.Scanner;
 import java.io.IOException;
 
 public class FileReader {
-    public static void readBoardFromFile(String filename) throws IOException {
+    public static int[][] readBoardFromFile(String filename) throws IOException {
+        int board[][] = new int[9][9];
         try {
-            int board[][] = new int[9][9];
             File file = new File(filename);
             Scanner fileIn = new Scanner(file);
-            int row=0;
+            int row = 0;
             while (fileIn.hasNext()) {
                 String line = fileIn.nextLine();
                 System.out.println(line);
@@ -17,16 +17,17 @@ public class FileReader {
                 }
                 row++;
             }
-            fileIn.close();  
+            fileIn.close();
             for (int i = 0; i < 9; i++) {
                 for (int j = 0; j < 9; j++) {
                     System.out.print(board[i][j] + " ");
                 }
                 System.out.println();
-            }  
+            }
         } catch (IOException e) {
             System.err.println("File not found" + e);
             throw e;
         }
+        return board;
     }
 }
