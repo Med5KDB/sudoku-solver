@@ -1,18 +1,20 @@
-public class Main {
-    public static void main(String[] args) {
-        Sudoku sudoku = new Sudoku();
-        int mat[][] = {
-                { 5, 3, 0, 0, 7, 0, 0, 0, 0 },
-                { 6, 0, 0, 1, 9, 5, 0, 0, 0 },
-                { 0, 9, 8, 0, 0, 0, 0, 6, 0 },
-                { 8, 0, 0, 0, 6, 0, 0, 0, 3 },
-                { 4, 0, 0, 8, 0, 3, 0, 0, 1 },
-                { 7, 0, 0, 0, 2, 0, 0, 0, 6 },
-                { 0, 6, 0, 0, 0, 0, 2, 8, 0 },
-                { 0, 0, 0, 4, 1, 9, 0, 0, 5 },
-                { 0, 0, 0, 0, 8, 0, 0, 7, 9 }
-        };
+import java.io.IOException;
+import java.util.Scanner;
 
+public class Main {
+    public static void main(String[] args) throws IOException {
+        int[][] mat;
+        Scanner scanner = new Scanner(System.in);
+
+        if (args.length > 0) {
+
+            String filename = args[0];
+            mat = FileReader.readBoardFromFile(filename);
+        } else {
+            System.out.println("Aucun fichier fourni en argument. Veuillez saisir la grille manuellement");
+            mat = UserInputReader.readBoardFromUser(scanner);
+        }
+        Sudoku sudoku = new Sudoku();
         if (sudoku.isValid(mat, 0)) {
             System.out.println("Solution trouvée :");
             sudoku.printBoard(mat);
@@ -20,4 +22,5 @@ public class Main {
             System.out.println("Pas de solution possible !");
         }
     }
+
 }
