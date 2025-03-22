@@ -3,10 +3,10 @@ import java.util.Scanner;
 import java.io.IOException;
 
 public class FileReader {
-    public static void main(String[] args) throws IOException {
+    public static void readBoardFromFile(String filename) throws IOException {
         try {
             int board[][] = new int[9][9];
-            File file = new File("grille.txt");
+            File file = new File(filename);
             Scanner fileIn = new Scanner(file);
             int row=0;
             while (fileIn.hasNext()) {
