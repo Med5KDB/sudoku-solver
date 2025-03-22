@@ -11,7 +11,6 @@ public class FileReader {
             int row = 0;
             while (fileIn.hasNext()) {
                 String line = fileIn.nextLine();
-                System.out.println(line);
                 for (int col = 0; col < 9; col++) {
                     board[row][col] = Character.getNumericValue(line.charAt(col));
                 }
