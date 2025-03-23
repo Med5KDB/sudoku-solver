@@ -21,7 +21,11 @@ public class FileReader {
             }
             for (int i = 0; i < 9; i++) {
                 for (int j = 0; j < 9; j++) {
-                    System.out.print(board[i][j] + " ");
+                    if (board[i][j] == 0) {
+                        System.out.print(" ");
+                    } else {
+                        System.out.print(board[i][j] + " ");
+                    }
                 }
                 System.out.println();
             }
