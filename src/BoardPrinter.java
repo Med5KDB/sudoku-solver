@@ -1,5 +1,5 @@
 public class BoardPrinter {
-    // Box drawing characters - thick lines (for cell boundaries)
+    // Caractères de dessin de boîte - lignes épaisses (pour les limites des cellules)
     static String horizontal = "\u2550"; // ═ (double horizontal)
     static String vertical = "\u2551";   // ║ (double vertical)
     static String topLeft = "\u2554";    // ╔ (double down and right)
@@ -12,16 +12,17 @@ public class BoardPrinter {
     static String bottomT = "\u2569";    // ╩ (double up and horizontal)
     static String cross = "\u256C";      // ╬ (double vertical and horizontal)
     
-    // Thin lines (for cell boundaries within 3x3 boxes)
+    // Lignes minces (pour les limites des cellules à l'intérieur des boîtes 3x3)
     static String verticalThin = "\u2502"; // │ (light vertical)
     static String horizontalThin = "\u2500"; // ─ (light horizontal)
     static String crossThin = "\u253C";     // ┼ (light vertical and horizontal)
     
+    // Méthode pour afficher la grille
     public static void printBoard(int board[][]) {
         int size = board.length;
         int boxSize = (int) Math.sqrt(size);
 
-        // Print top border
+        // Afficher la bordure supérieure
         System.out.print(topLeft);
         for (int i = 0; i < size; i++) {
             System.out.print(horizontal + horizontal + horizontal);
@@ -33,7 +34,7 @@ public class BoardPrinter {
         }
         System.out.println(topRight);
 
-        // Print rows of numbers with vertical separators
+        // Afficher les lignes de chiffres avec des séparateurs verticaux
         for (int i = 0; i < size; i++) {
             System.out.print(vertical);
             for (int j = 0; j < size; j++) {
@@ -50,9 +51,9 @@ public class BoardPrinter {
             }
             System.out.println(vertical);
 
-            // Print horizontal separators
+            // Afficher les séparateurs horizontaux
             if ((i + 1) % boxSize == 0 && i != size - 1) {
-                // Print thick horizontal line between boxes
+                // Afficher la ligne horizontale épaisse entre les boîtes
                 System.out.print(leftT);
                 for (int j = 0; j < size; j++) {
                     System.out.print(horizontal + horizontal + horizontal);
@@ -64,7 +65,7 @@ public class BoardPrinter {
                 }
                 System.out.println(rightT);
             } else if (i != size - 1) {
-                // Print thin horizontal line between sub grid rows
+                // Afficher la ligne horizontale mince entre les rangées de sous-grilles
                 System.out.print(vertical);
                 for (int j = 0; j < size; j++) {
                     System.out.print(horizontalThin + horizontalThin + horizontalThin);
@@ -78,7 +79,7 @@ public class BoardPrinter {
             }
         }
 
-        // Print bottom border
+        // Afficher la bordure inférieure
         System.out.print(bottomLeft);
         for (int i = 0; i < size; i++) {
             System.out.print(horizontal + horizontal + horizontal);

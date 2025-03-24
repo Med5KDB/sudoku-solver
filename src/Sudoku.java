@@ -1,5 +1,7 @@
 public class Sudoku {
 
+    // Fonctions pour vérifier les conditions de validation du jeu, 3 conditions => 3 fonctions
+
     boolean isNotInRow(int board[][], int row, int number) {
         for (int i = 0; i < 9; i++)
             if (board[row][i] == number)
@@ -15,7 +17,7 @@ public class Sudoku {
         return true;
     }
 
-    // not in 3 by 3 box
+    
     boolean isNotInBox(int board[][], int row, int col, int number) {
         int _row = row - row % 3;
         int _col = col - col % 3;
@@ -36,7 +38,7 @@ public class Sudoku {
         if (board[row][col] != 0) {
             return isValid(board, position + 1);
         }
-        // Implementation de l'algorithme Backtracking
+        // Implémentation de l'algorithme Backtracking
 
         for (int k = 1; k <= 9; k++) {
             // Vérifier si la valeur est présente, si oui donc on peut l'ajouter dans la
@@ -58,12 +60,4 @@ public class Sudoku {
         return false;
     }
 
-    void printBoard(int board[][]) {
-        for (int i = 0; i < 9; i++) {
-            for (int j = 0; j < 9; j++) {
-                System.out.print(board[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
 }
