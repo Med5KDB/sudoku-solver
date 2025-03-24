@@ -39,7 +39,8 @@ javac src/*.java
 
 Exemple de format (grille.txt) :
 
-`530070000
+```
+530070000
 600195000
 098000060
 800060003
@@ -48,5 +49,5 @@ Exemple de format (grille.txt) :
 060000280
 000419005
 000080079
-`
+```
 
