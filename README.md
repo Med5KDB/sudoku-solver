@@ -22,9 +22,14 @@ Le programme utilise l'algorithme de backtracking pour trouver la solution et af
 git clone https://github.com/Med5KDB/sudoku-solver
 ```
 
-2. Compilez les fichiers source :
+2. Compilez les fichiers source avec la commande 
 ```bash
 javac src/*.java
+```
+ou
+
+```bash
+javac Main.java
 ```
 
 ## Utilisation
@@ -51,3 +56,10 @@ Exemple de format (grille.txt) :
 000080079
 ```
 
+## Exemple
+
+![Sudoku game solution example](https://github.com/user-attachments/assets/f2e4aaf9-e658-46e2-9c68-e54940729e0d)
+
+## Exemple de sortie avec un fichier texte
+
+![Sudoku game solution example with a text file](https://github.com/user-attachments/assets/28016ba8-bf53-47c7-93d7-99c9306be240)

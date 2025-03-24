@@ -29,6 +29,9 @@ public class UserInputReader {
                 }
             }
         }
+        System.out.println("\nVoici la grille que vous avez saisie :");
+        BoardPrinter.printBoard(board);
+        
         return board;
     }
 }
