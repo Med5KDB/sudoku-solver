@@ -19,16 +19,7 @@ public class FileReader {
                 }
                 row++;
             }
-            for (int i = 0; i < 9; i++) {
-                for (int j = 0; j < 9; j++) {
-                    if (board[i][j] == 0) {
-                        System.out.print(" ");
-                    } else {
-                        System.out.print(board[i][j] + " ");
-                    }
-                }
-                System.out.println();
-            }
+            BoardPrinter.printBoard(board);
         } catch (IOException e) {
             System.err.println("Error reading file: " + e);
             throw e;
