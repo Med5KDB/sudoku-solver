@@ -17,7 +17,8 @@ public class Main {
         Sudoku sudoku = new Sudoku();
         if (sudoku.isValid(mat, 0)) {
             System.out.println("Solution trouvée :");
-            sudoku.printBoard(mat);
+            // sudoku.printBoard(mat);
+            BoardPrinter.printBoard(mat);
         } else {
             System.out.println("Pas de solution possible !");
         }
