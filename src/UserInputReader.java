@@ -10,19 +10,22 @@ public class UserInputReader {
                 System.out.println("Ligne " + (row + 1) + " : ");
                 String line = scanner.nextLine().trim();
 
-                String [] values = line.split(" ");
+                String[] values = line.split(" ");
                 if (values.length != 9) {
                     System.out.println("Erreur: La ligne doit contenir exactement 9 chiffres séparés par des espaces");
                     continue;
                 }
-
-                try {
-                    for (int col = 0; col < 9; col++) {
-                        board[row][col] = Integer.parseInt(values[col]);
+                boolean validLine = true;
+                for (int col = 0; col < 9; col++) {
+                    if (values[col].length() != 1 || !Character.isDigit(values[col].charAt(0))) {
+                        System.out.println("Erreur: Chaque valeur doit être un seul chiffre");
+                        validLine = false;
+                        break;
                     }
+                    board[row][col] = Integer.parseInt(values[col]);
+                }
+                if (validLine) {
                     break; // Exit the loop if the line is valid
-                } catch (NumberFormatException e) {
-                    System.out.println("Erreur: La ligne doit contenir uniquement des chiffres ");
                 }
             }
         }
