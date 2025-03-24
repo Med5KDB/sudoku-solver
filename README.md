@@ -19,7 +19,7 @@ Le programme utilise l'algorithme de backtracking pour trouver la solution et af
 
 1. Clonez le dépôt :
 ```bash
-git clone [url-du-repo]
+git clone https://github.com/Med5KDB/sudoku-solver
 ```
 
 2. Compilez les fichiers source :
